@@ -1,0 +1,24 @@
+{
+    "Parameters": {
+        "BucketName": {
+          "Description" : "Name of S3 bucket",
+          "Type": "String"
+        }
+    },
+    "Resources" : {
+        "ExampleResourceName" : {
+            "Type" : "AWS::S3::Bucket",
+            "Properties" : {
+               "BucketName" : {
+                   "Ref" : "BucketName"
+               },
+               "PublicAccessBlockConfiguration" : {
+                "BlockPublicAcls" : true,
+                "BlockPublicPolicy" : true,
+                "IgnorePublicAcls" : true,
+                "RestrictPublicBuckets" : true
+               }
+            }
+        }
+    }  
+}

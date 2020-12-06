@@ -1,0 +1,18 @@
+{
+    "Parameters": {
+        "ParamNameExample": {
+          "Description" : "Description of a parameter",
+          "Type": "String"
+        }
+    },
+    "Resources" : {
+        "ResourceName" : {
+            "Type" : "AWS::?::?",
+            "Properties" : {
+               "Example" : {
+                   "Ref" : "ParamNameExample"
+               }              
+            }
+        }
+    }
+}

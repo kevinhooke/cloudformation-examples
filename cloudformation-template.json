@@ -1,0 +1,10 @@
+{
+    "Resources" : {
+        "ResourceName" : {
+            "Type" : "AWS::?::?",
+            "Properties" : {
+               "Example" : "propertyvalue"               
+            }
+        }
+    }
+}
