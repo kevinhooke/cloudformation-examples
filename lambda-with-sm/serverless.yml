@@ -1,0 +1,25 @@
+service: lambda-with-sm
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: '2'
+
+# creating a custom property using an ${ssm} reference is
+# described here: https://github.com/serverless/serverless/issues/5024#issuecomment-567507416
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+custom:
+  secrets: ${ssm:/aws/reference/secretsmanager/DBPassword1-JpKRly~true}
+# you can overwrite defaults here
+#  stage: dev
+  region: us-west-2
+
+functions:
+  hello:
+    handler: handler.hello
+
+#    Define function environment variables here
+    environment:
+      password: ${self:custom.secrets.DBPassword1}
